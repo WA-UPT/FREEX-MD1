@@ -69,7 +69,7 @@ const {
 } = require('megajs')
 const path = require('path')
 const msgRetryCounterCache = new NodeCache()
-const ownerNumber = '94765527900'
+const ownerNumber = '94761344523'
 
 
 
@@ -139,19 +139,13 @@ const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream
             });
             console.log('Plugins installed ✅')
             console.log('Bot connected ✅')
-conn.sendMessage(ownerNumber + "@s.whatsapp.net", {
-text: "*👨‍💻 ᴄʏʙᴇʀ ᴠᴇɴᴏᴍ ꜱᴏɴɢ ᴅʟ 👨‍💻 successfully connected* ✓\n\n> ◦ *Official GitHub* - ```https://github.com/DarkSahi75```\n> ◦ ᴊᴏɪɴ ᴏᴜʀ sᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ: https://whatsapp.com/channel/0029Vb8WOgSBPzjfG09WEn10\n*👨‍💻 ᴄʏʙᴇʀ ᴠᴇɴᴏᴍ ꜱᴏɴɢ ᴅʟ 👨‍💻 ᴡʜᴀᴛꜱᴀᴘᴘ ᴜꜱᴇʀ ʙᴏᴛ*\n*ᴄʀᴇᴀᴛᴇᴅ ʙʏ • ꜱᴀʜᴀꜱ ᴛᴇᴄʜ & ᴅɪɴᴜᴡᴀ ᴛᴇᴄʜ*",
-contextInfo: {
-externalAdReply: {
-title: "👨‍💻 ᴄʏʙᴇʀ ᴠᴇɴᴏᴍ ꜱᴏɴɢ ᴅʟ 👨‍💻\nSuccessfully Connected !",	
-thumbnailUrl: "https://cdn.dribbble.com/users/15468/screenshots/2450252/logo.jpg",
-sourceUrl: "",
-mediaType: 1,
-renderLargerThumbnail: true
-}}}) 
-    }
-  })
 
+      let up = `*DINUWH-FREE MD successfully connected* ✓\n\n> ◦ *Owner Contac infomation* - \nwa.me//+94728899640?text=F-MD\nOR,\nwa.me//+94761344523?text=F-MD
+> ◦ ᴏᴜʀ sᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ: \n\n*  https://whatsapp.com/channel/0029Vb5XXIfDp2Q3A5zeZb1d
+\n* *👨‍💻∂ιηυωн-ƒяєє ѕт м∂ 👨‍💻\nᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ*\n*ᴄʀᴇᴀᴛᴇᴅ ʙʏ • 𝙳𝙲𝙼 ∂ιηυωн-χ  & 𝚃𝙳𝙳 ѕαнαѕ тє¢н*\n* *𝚃𝙷𝙰𝙽𝙺 𝚈𝙾𝚄 🌝🩷*\n\nPREFIX: ${prefix}`;
+      conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://i.ibb.co/tpJYnjV6/DiNuWhMd.jpg` }, caption: up });
+    }
+  });
 
 conn.forwardMessage = async (jid, message, forceForward = false, options = {}) => {
             let vtype
