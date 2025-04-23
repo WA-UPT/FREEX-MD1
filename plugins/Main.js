@@ -34,8 +34,8 @@ cmd({
         
         
 const msg = `*╭─     ᴄᴏᴍᴍᴀɴᴅꜱ ᴘᴀɴᴇʟ*
-*│🕵️‍♂️ 𝘙𝘶𝘯 𝘛𝘪𝘮𝘦 -* ${runtime(process.uptime())} 
-*│🕵️‍♂️ 𝘙𝘢𝘮 𝘜𝘴𝘦 -* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
+*│🕵️‍♂️ 𝘙𝘶𝘯 𝘛𝘪𝘮𝘦 -* 58 seconds 
+*│🕵️‍♂️ 𝘙𝘢𝘮 𝘜𝘴𝘦 -* 49.44MB / 63276MB
 *╰──────────●●►*
 𓆩 𝙳𝙸𝙽𝚄𝚆𝙷-𝙵𝚁𝙴𝙴_𝚇-𝙼𝙳 𓆪  
 Simple & Powerful WhatsApp Bot  
@@ -56,15 +56,7 @@ wa.me//+94728899640?text=F-BOT
 > block
 > unblock
 > jid
-> gjid
-> setpp
-> left
-> kick
-> add
-> ,owner – Contact bot owner  
-> ,channel – Our official channels  
-> ,mute / ,unmute – Mute/unmute bot  
-
+> fo/ forward
 Extra Features:  
 ✓ Status Seen (Auto)  
 ✓ Status React/Like (Auto)
@@ -86,7 +78,7 @@ sᴛᴀᴛᴜs ᴠɪᴅᴇᴏ ᴄʜᴀɴɴᴇʟ:
 https://whatsapp.com/channel/0029VaxVCPi96H4VOKai4S3s
 
 ━━━━━━━━━━━━━━  
-ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅɪɴᴜᴡʜ ᴍᴅ
+
 ╭─━━━❰ *THANK YOU!* ❱━━━─╮
 │ ⛦ *ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅɪɴᴜᴡʜ ᴍᴅ* ⛦
 ╰───────────────────────╯`
