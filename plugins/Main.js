@@ -56,6 +56,7 @@ wa.me//+94728899640?text=F-BOT
 > block
 > unblock
 > jid
+> vv (view once)
 > fo/ forward
 Extra Features:  
 ✓ Status Seen (Auto)  
