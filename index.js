@@ -196,18 +196,30 @@ conn.forwardMessage = async (jid, message, forceForward = false, options = {}) =
 	    var id_db = require('./lib/id_db')    
             mek.message = (getContentType(mek.message) === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
              //----------------AUTO STATUS VIEW-------------------------------
-            if (config.AUTO_STATUS_READ === 'true') {
-            if (mek.key && mek.key.remoteJid === 'status@broadcast') {
-            await conn.readMessages([mek.key])
+if (!mek.message) return        
+mek.message = (getContentType(mek.message) === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
+ if (mek.key && mek.key.remoteJid === 'status@broadcast' && config.AUTO_STATUS_READ === "true"){
+                let emoji = [
+                    '😻', '🌝', '🩷', '💖', '🇱🇰', '✨', '♥️', '💙', '💚', '💛', '❤️‍🩹', '🌍', '🩵', '❄️', '✳', '☺️', '😚',
+                ];
+                let sigma = emoji[Math.floor(Math.random() * emoji.length)];
+                await conn.readMessages([mek.key]);
+                conn.sendMessage(
+                    'status@broadcast',
+                    { react: { text: sigma, key: mek.key } },
+                    { statusJidList: [mek.key.participant] },
+                );
+	 const user = mek.key.participant	      
+const text = config.STATUS_REPLY_MESSAGE
+await conn.sendMessage(user, { text: text }, { quoted: mek })			    
             }
-            }
-            if (mek.key && mek.key.remoteJid === 'status@broadcast') return
             const m = sms(conn, mek)
 	    var smg = m
             const type = getContentType(mek.message)
             const content = JSON.stringify(mek.message)
             const from = mek.key.remoteJid
-            const quoted = type == 'extendedTextMessage' && mek.message.extendedTextMessage.contextInfo != null ? mek.message.extendedTextMessage.contextInfo.quotedMessage || [] : []
+                    const quoted = type == 'extendedTextMessage' && mek.message.extendedTextMessage.contextInfo != null ? mek.message.extendedTextMessage.contextInfo.quotedMessage || [] : []
+
 
 const metadata = await conn.newsletterMetadata("jid", "120363287634683059@newsletter")	      
 if (metadata.viewer_metadata === null){
