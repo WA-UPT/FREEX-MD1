@@ -30,6 +30,11 @@ async (conn, mek, m, {
   q, reply
 }) => {
   try {
+    // Only bot session owner can use
+    if (m.sender !== conn.user.id) {
+      return reply("මේ කමාන්ඩ් එක භාවිතා කරන්න පුළුවන් bot session owner ට විතරයි!");
+    }
+
     if (!q.includes(",")) return reply("උදාහරණය: .channelreact <channel_link>,<reaction>");
 
     let link = q.split(",")[0].trim();
