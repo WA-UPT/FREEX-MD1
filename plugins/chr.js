@@ -52,3 +52,27 @@ reply("Error එකක් ආව: " + e.message);
 });
 //මේක බොට් ඩිප්ලොය් කරන් ඉන්න කෙනාට විතරක් වැඩ කරන විදිහට හදල ඔනි🤧 is owner
 
+
+cmd({
+    pattern: "getdp",
+    react: "💗",
+    alias: ["gdp", "getpp", "pp"],
+    desc: "youtube search.",
+    category: "other",
+    use: '.yts alone',
+    filename: __filename
+}, async (conn, mek, m, { from, quoted, prefix, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
+    try {
+        if (!isMe && !isOwner) {
+            return await reply("🚫 You are not authorized to get the profile picture!");
+        }
+      const ppUrl = await conn.profilePictureUrl(from, "image");
+      await conn.sendMessage(from, {
+        image: { url: ppUrl }, // Ensure img.allmenu is a valid image URL or base64 encoded image
+      });
+    } catch (e) {
+      console.log(e);
+      reply(`${e}`);
+    }
+  }
+);
