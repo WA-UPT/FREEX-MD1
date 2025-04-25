@@ -76,3 +76,41 @@ cmd({
     }
   }
 );
+
+
+const fs = require("fs");
+const { downloadMediaMessage } = require("@whiskeysockets/baileys");
+
+cmd({
+  pattern: "setfulldp",
+  react: "🖼️",
+  alias: ["fulldp", "dpbot"],
+  desc: "Set full DP for bot",
+  category: "owner",
+  use: ".setfulldp (reply to image)",
+  filename: __filename
+}, async (conn, mek, m, {
+  from, quoted, isOwner, reply
+}) => {
+  try {
+    if (!isOwner) return await reply("🚫 ඔබට මෙම command එක භාවිතා කිරීමට අවසර නැහැ!");
+
+    if (!quoted || !quoted.message || !quoted.message.imageMessage) {
+      return await reply("🖼️ කරුණාකර image එකකට reply කරලා command එක දාන්න!");
+    }
+
+    const mediaPath = `./tmp/dp_${Date.now()}.jpg`;
+    const stream = await downloadMediaMessage(quoted, "buffer", {}, { reuploadRequest: conn.updateMediaMessage });
+    fs.writeFileSync(mediaPath, stream);
+
+    await conn.updateProfilePicture(conn.user.id, {
+      url: mediaPath
+    });
+
+    fs.unlinkSync(mediaPath);
+    await reply("✅ DP එක සාර්ථකව update කළා!");
+  } catch (e) {
+    console.log(e);
+    await reply("⚠️ දෝෂයක් ඇතිවී ඇත! " + e.message);
+  }
+});
