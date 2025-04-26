@@ -4,20 +4,25 @@
   "logo": "https://files.catbox.moe/siaqr5.jpg",
   "keywords": ["sahasmd", "bot", "whatsapp bot", "multi device", "sahas-md"],
   "success_url": "/",
-
+  
   "env": {
     "SESSION_ID": {
-            "description": "Type the Session-ID you got from scaning QR",
-            "required": true,
-            "value": "put session id here"
-        }
+      "description": "Type the Session-ID you got from scanning QR",
+      "required": true,
+      "value": ""
     },
-         "buildpacks": [
-        {
-            "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
-        }
-     ],
+    "SESSION_ID": {
+      "description": "Owner number with country code",
+      "required": true,
+      "value": ""
+    }
+  },
+  
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
+    }
+  ],
+  
   "stack": "heroku-24"
-  
-  
 }
