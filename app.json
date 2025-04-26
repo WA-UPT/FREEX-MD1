@@ -13,7 +13,7 @@
     },
     "SESSION_ID": {
       "description": "Owner number with country code",
-      "required": true,
+      "required": false,
       "value": ""
     }
   },
