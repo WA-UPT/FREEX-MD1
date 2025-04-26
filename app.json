@@ -11,7 +11,7 @@
       "required": true,
       "value": ""
     },
-    "SESSION_ID": {
+    "SESSIONid": {
       "description": "Owner number with country code",
       "required": false,
       "value": ""
